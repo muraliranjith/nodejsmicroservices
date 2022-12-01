@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        // rest options remain same
+        "target": "es6",
+        "module": "commonjs",
+        "rootDir": "./",
+        "outDir": "./build",
+        "strict": true,
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+    }
+}

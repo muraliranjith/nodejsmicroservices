@@ -7,7 +7,7 @@
     "lint": "echo Linting",
     "prettier": "echo ckecking Prettier formatting",
     "prettier:fix": "echo fixing Prettier formatting",
-    "start:dev": "echo starting dev sever",
+    "start:dev": "nodemon",
     "start": "echo starting prod server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,7 @@
     "@types/node": "^18.11.10",
     "jest": "^29.3.1",
     "supertest": "^6.3.1",
+    "nodemon": "^2.0.20",
     "ts-jest": "^29.0.3"
   }
 }
