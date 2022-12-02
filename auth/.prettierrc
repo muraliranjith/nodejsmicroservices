@@ -1,0 +1,16 @@
+{
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "semi": false,
+    "overrides": [
+        {
+          "files": "*.js",
+          "options": {
+            "semi": true,
+            "parser": "typescript"
+          }
+        }
+      ]
+}
