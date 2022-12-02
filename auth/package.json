@@ -4,10 +4,10 @@
   "description": "Authentication microservice for our social media app",
   "main": "index.ts",
   "scripts": {
-    "lint": "echo Linting",
+    "lint": "eslint src/**/*.ts",
     "prettier": "echo ckecking Prettier formatting",
     "prettier:fix": "echo fixing Prettier formatting",
-    "start:dev": "nodemon",
+    "start:dev": "nodemon src/index.ts",
     "start": "echo starting prod server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,9 +22,14 @@
   "devDependencies": {
     "@types/express": "^4.17.14",
     "@types/node": "^18.11.10",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^29.3.1",
-    "supertest": "^6.3.1",
     "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "supertest": "^6.3.1",
     "ts-jest": "^29.0.3"
   }
 }
