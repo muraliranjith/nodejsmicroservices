@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "lint": "eslint src/**/*.ts",
-    "prettier": "prettier --write ./src/**/*.ts",
+    "prettier": "prettier --check ./src/**/*.ts",
     "prettier:fix": "echo fixing Prettier formatting",
     "start:dev": "nodemon src/index.ts",
     "start": "echo starting prod server",
@@ -42,7 +42,8 @@
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
       "eslint .",
-      "prettier --write .",
+      "npm run prettier",
+      "npm run lint" ,
       "git add"
     ]
   }
