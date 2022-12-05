@@ -11,6 +11,8 @@
     - npm install --save-dev eslint
     - npm install prettier eslint-config-airbnb-typescript-prettier --save-dev
     - npm i lint-staged husky --save-dev
+    - npm install --save-dev @types/supertest
+    - npm i --save-dev @types/jest
 ### es lint docs to check how to work eslint and how to give rules.
     - https://eslint.org/docs/latest/rules/
     - create an .eslintrc.js file
