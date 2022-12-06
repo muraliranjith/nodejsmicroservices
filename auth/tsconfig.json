@@ -1,15 +1,15 @@
 {
-    "compilerOptions": {
-        // rest options remain same
-        "allowJs": true,
-        "target": "es6",
-        "module": "commonjs",
-        "rootDir": "./",
-        "outDir": "./build",
-        "strict": true,
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-    }
+	"compilerOptions": {
+		// rest options remain same
+		"allowJs": true,
+		"target": "es6",
+		"module": "commonjs",
+		"rootDir": "./",
+		"outDir": "./build",
+		"strict": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	}
 }
