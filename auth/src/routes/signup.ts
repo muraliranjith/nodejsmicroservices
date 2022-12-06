@@ -3,16 +3,18 @@ import { body, validationResult } from 'express-validator';
 
 const signupRouter = express.Router();
 
-signupRouter.post('/api/auth/signup',
-   [ body('email').isEmail().withMessage('Email must be a in valid format')
-],
+signupRouter.post(
+    '/api/auth/signup',
+    [body('email').isEmail().withMessage('Email must be a in valid format')],
     (req: Request, res: Response) => {
         const errors = validationResult(req);
+        console.log('eroor', errors);
+
         if (!errors.isEmpty()) {
             res.status(422).send({});
         }
         res.send({});
-
-    })
+    }
+)
 
 export default signupRouter;
