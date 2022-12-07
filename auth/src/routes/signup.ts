@@ -1,11 +1,8 @@
 import express, { Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
-
+import { handleMethodNotAllowed } from './utils';
 export const SIGNUP_ROUTE = '/api/auth/signup';
 const signupRouter = express.Router();
-
-const myVariable = 'testing';
-const test = `http://www.unsocial.app/user/${myVariable}`;
 signupRouter.post(
 	SIGNUP_ROUTE,
 	[body('email').isEmail().withMessage('Email must be a in valid format')],
@@ -38,6 +35,13 @@ signupRouter.post(
 		res.send({});
 	}
 );
+signupRouter.options(SIGNUP_ROUTE, (req, res) => {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Method', 'POST, OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
+	res.sendStatus(200);
+});
+
 signupRouter.get(SIGNUP_ROUTE, (req, res) => {
 	res.status(405).send({});
 });
