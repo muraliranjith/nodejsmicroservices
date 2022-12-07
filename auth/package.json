@@ -4,9 +4,9 @@
 	"description": "Authentication microservice for our social media app",
 	"main": "index.ts",
 	"scripts": {
-		"lin		"lint": "eslint src",
+		"lint": "eslint src",
 		"prettier": "prettier --check .",
-ier:fix": "prettier --write .",
+		"prettier:fix": "prettier --write .",
 		"start:dev": "nodemon src/index.ts",
 		"start": "echo starting prod server",
 		"test": "jest",
@@ -61,3 +61,4 @@ ier:fix": "prettier --write .",
 		}
 	}
 }
+
