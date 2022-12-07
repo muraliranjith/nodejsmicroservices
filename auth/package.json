@@ -4,13 +4,12 @@
 	"description": "Authentication microservice for our social media app",
 	"main": "index.ts",
 	"scripts": {
-		"lint": "eslint src",
+		"lin		"lint": "eslint src",
 		"prettier": "prettier --check .",
-		"prettier:fix": "prettier --write .",
+ier:fix": "prettier --write .",
 		"start:dev": "nodemon src/index.ts",
 		"start": "echo starting prod server",
 		"test": "jest",
-		"staged": "lint-staged",
 		"test:watch": "jest --watchAll --no-cache"
 	},
 	"jest": {
@@ -58,7 +57,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run staged"
+			"pre-commit": "lint-staged"
 		}
 	}
 }
