@@ -42,13 +42,7 @@ signupRouter.options(SIGNUP_ROUTE, (req, res) => {
 	res.sendStatus(200);
 });
 
-signupRouter.get(SIGNUP_ROUTE, (req, res) => {
-	res.status(405).send({});
-});
-signupRouter.put(SIGNUP_ROUTE, (req, res) => {
-	res.status(405).send({});
-});
-signupRouter.all(SIGNUP_ROUTE, (req, res) => {
-	res.status(405).send({});
-});
+signupRouter.get(SIGNUP_ROUTE, handleMethodNotAllowed);
+signupRouter.put(SIGNUP_ROUTE, handleMethodNotAllowed);
+signupRouter.all(SIGNUP_ROUTE, handleMethodNotAllowed);
 export default signupRouter;
