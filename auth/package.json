@@ -10,7 +10,7 @@
 		"start:dev": "nodemon src/index.ts",
 		"start": "echo starting prod server",
 		"test": "jest",
-		"lint-staged": "lint-staged",
+		"staged": "lint-staged",
 		"test:watch": "jest --watchAll --no-cache"
 	},
 	"jest": {
@@ -58,7 +58,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run lint-staged"
+			"pre-commit": "npm run staged"
 		}
 	}
 }
