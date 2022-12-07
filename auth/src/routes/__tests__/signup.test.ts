@@ -36,7 +36,7 @@ describe('test Validity of password input', () => {
 	let email = '';
 
 	beforeAll(() => {
-		email = 'test@yopmail.com';
+		email = 'test@gmail.com';
 	});
 	it('should return 422 if the password is not provided', async () => {
 		await request(app).post(SIGNUP_ROUTE).send({ email }).expect(422);
@@ -77,5 +77,27 @@ describe('test Validity of password input', () => {
 			.post(SIGNUP_ROUTE)
 			.send({ email, password: 'Smart@123' })
 			.expect(200);
+	});
+});
+
+describe('test Sanitization of email input', () => {
+	it('should not contain uppercase letters in the domain of the email', async () => {
+		const normalizedEmail = 'test@gmail.com';
+		const response = await request(app)
+			.post(SIGNUP_ROUTE)
+			.send({
+				email: 'test@gmail.Com',
+				password: 'Valid123'
+			})
+			.expect(200);
+		expect(response.body.email).toEqual(normalizedEmail);
+	});
+});
+describe('test Sanitization of Password input', () => {
+	it('should not Contain unescaped Charactors', async () => {
+		await request(app).post(SIGNUP_ROUTE).send({
+			email: 'test@gmail.Com',
+			password: 'Valid1<>"'
+		}).expect(200);
 	});
 });
