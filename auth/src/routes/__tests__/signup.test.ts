@@ -3,38 +3,6 @@ import app from '../../app';
 import { SIGNUP_ROUTE } from '../signup';
 
 /**
- * Available HTPP methods in /api/auth/signup:
- * 	- POST
- * 	- GET
- * 	- PUT
- * 	- PATCH
- * 	- DELETE
- */
-describe('', () => {
-	let password = '';
-	let email = '';
-	beforeAll(() => {
-		(password = 'ValidPassword1'), (email = 'test@yopmail.com');
-	});
-	it('Should return 405 for non-post requests to the signup route', async () => {
-		await request(app).get(SIGNUP_ROUTE).expect(405);
-		await request(app).put(SIGNUP_ROUTE).expect(405);
-		await request(app).patch(SIGNUP_ROUTE).expect(405);
-		await request(app).delete(SIGNUP_ROUTE).expect(405);
-	});
-	it('Should return 200 for post, options requests to the signup route', async () => {
-		await request(app).post(SIGNUP_ROUTE).send({ email, password }).expect(200);
-		await request(app).options(SIGNUP_ROUTE).expect(200);
-	});
-	it('Should return post as the only allowed from an options request', async () => {
-		const response = await request(app).options(SIGNUP_ROUTE).expect(200);
-		expect(response.get('Access-Control-Allow-Method')).toContain('POST');
-		expect(response.get('Access-Control-Allow-Method')).toContain('OPTIONS');
-		console.log(response.get('Access-Control-Allow-Method'));
-		
-	});
-});
-/**
  *  valid email conditions:
  * 		- Standard await formats from 'express-validator' package
  */

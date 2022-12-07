@@ -2,6 +2,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	extends: [
 		'airbnb-base',
+		'plugin:import/recommended',
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/eslint-recommended'
@@ -33,11 +34,7 @@ module.exports = {
 		'no-console': 0,
 		'import/newline-after-import': 'off',
 		'import/prefer-default-export': 'off',
-		'import/no-unresolved': [2, { caseSensitive: false }],
-		quetes: [
-			'error',
-			'single',
-			{ avoidEscape: true, allowTemplateLiterals: false }
-		]
+		'import/no-unresolved': ['off'],
+		'import/extensions': ['off']
 	}
 };
